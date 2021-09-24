@@ -41,3 +41,11 @@ CREATE TABLE vets (
     date_of_graduation  DATE,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE specialization (
+    species_id  INT,
+    vets_id     INT,
+    FOREIGN KEY (species_id) REFERENCES species (id),
+    FOREIGN KEY (vets_id) REFERENCES vets (id),
+    PRIMARY KEY (species_id, vets_id)
+);
